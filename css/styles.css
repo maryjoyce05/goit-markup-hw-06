@@ -19,6 +19,10 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .contact {
@@ -43,8 +47,8 @@ body {
   height: 312px;
   box-sizing: border-box;
   padding: 120px 156px 156px;
+  gap: 100px;
   display: flex;
-  gap: 120px;
 }
 
 .link-web {
@@ -65,7 +69,8 @@ body {
 
 .footer-text {
   color: var(--cloud);
-  line-height: 1.5;
+  line-height: 1.5em;
+  width: 264px;
 }
 
 /* line-height conversion
@@ -208,6 +213,7 @@ body {
     url("../images/people_office.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .hero-title {
@@ -271,13 +277,13 @@ body {
 
 .modal-close-btn {
   border-radius: 100%;
-  border: 1px solid rbga(0, 0, 0, 0.1);
   background-color: var(--cornflower);
   width: 30px;
   height: 30px;
   color: var(--navy_blue);
   margin-top: 24px;
   margin-right: 24px;
+  border-color: var(--cornflower);
 }
 
 /* end of button style */
@@ -444,7 +450,8 @@ body {
 }
 
 .customer-list-icon:hover,
-.customer-list-icon:focus {
+.customer-list-icon:focus,
+.customer-icon:focus {
   border-color: var(--iris);
 }
 
@@ -453,7 +460,7 @@ body {
 }
 
 .customer-list-icon:hover .customer-icon-logo,
-.customer-list-icon:focus .customer-icon-logo {
+.customer-icon-logo:focus {
   fill: var(--ocean);
 }
 
@@ -592,3 +599,211 @@ body {
 .image-caption {
   padding: 40px 32px;
 }
+
+/* FORM STYLE - FOOTER */
+.footer-subscribe {
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.32px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+
+.input-email {
+  border-radius: 4px;
+  border: 1px solid var(--WHITE, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  width: 264px;
+  height: 40px;
+}
+
+.email-subscription {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.footer-subscribe-btn {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.64px;
+  color: var(--WHITE, #fff);
+  text-align: center;
+  background: var(--iris);
+  border-radius: 4px;
+  background: var(--iris);
+  width: 165px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+}
+
+.input-email {
+  color: var(--WHITE, #fff);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5px;
+  letter-spacing: 0.48px;
+  padding-left: 16px;
+}
+
+/* end of FORM Style */
+
+/* HERO FORM */
+
+.service-info-title {
+  color: var(--navy_blue);
+  font-size: 16px;
+  text-align: center;
+}
+
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-services {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.service-label {
+  /* padding: 8px; */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: --light_slate;
+  font-family: Roboto;
+  font-size: 12px;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.service-info-input {
+  width: 360px;
+  height: 40px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding-left: 38px;
+  border-radius: 4px;
+  border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
+}
+
+.service-info-icon {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+}
+
+.service-info:focus-within .service-info-input {
+  border: 1px solid var(--iris);
+  outline: none; /*remove the default focus outline that some browsers apply. */
+  color: var(--navy_blue);
+}
+
+.service-info:focus-within .service-info-icon {
+  fill: var(--iris);
+}
+
+.service-info-input,
+.service-input-comment,
+.privacy {
+  color: var(--light_slate);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+}
+
+.service-input-comment {
+  width: 382px;
+  height: 120px;
+  border-radius: 4px;
+  border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
+  padding-top: 8px;
+  padding-left: 16px;
+  resize: none;
+  margin-top: 4px;
+  outline: none;
+}
+
+.service-input-comment:focus {
+  border: 1px solid var(--iris);
+  color: var(--navy_blue);
+  outline: none; /*remove the default focus outline that some browsers apply. */
+}
+
+.privacy {
+  text-decoration: underline;
+  color: var(--iris);
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.8px;
+}
+
+.privacy-check {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.8px;
+  text-align: left;
+  margin-top: 16px;
+  gap: 8px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-submit-btn {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.64px;
+  color: var(--WHITE, #fff);
+  text-align: center;
+  border-radius: 4px;
+  background: var(--iris);
+  width: 105px;
+  gap: 16px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  width: 169px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: var(--iris);
+}
+
+/* svg icons */
+
+/* END OF HERO FORM */

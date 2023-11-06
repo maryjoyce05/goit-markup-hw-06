@@ -48,6 +48,68 @@
         <div class="backdrop is-hidden" data-modal>
           <div class="modal">
             <button class="modal-close-btn" data-modal-close>&times;</button>
+
+            <h2 class="service-info-title">
+              Leave your contacts and we will call you back.
+            </h2>
+            <form class="services">
+              <div class="form-services">
+                <label for="name" class="service-label">Name </label>
+                <div class="service-info">
+                  <input
+                    type="text"
+                    name="name"
+                    class="service-info-input"
+                    id="name"
+                  />
+                  <svg class="service-info-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-person"></use>
+                  </svg>
+                </div>
+
+                <label for="phone" class="service-label">Phone </label>
+                <div class="service-info">
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="service-info-input"
+                    id="phone"
+                  />
+                  <svg class="service-info-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-phone"></use>
+                  </svg>
+                </div>
+
+                <label for="email" class="service-label">Email </label>
+                <div class="service-info">
+                  <input
+                    type="email"
+                    name="email"
+                    class="service-info-input"
+                    id="email"
+                  />
+                  <svg class="service-info-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-email"></use>
+                  </svg>
+                </div>
+
+                <label for="comment" class="service-label"
+                  >Comment
+                  <textarea
+                    name="comment"
+                    id="comment"
+                    placeholder="Text Input"
+                    class="service-input-comment"
+                  ></textarea>
+                </label>
+              </div>
+              <div class="privacy-check">
+                <input type="checkbox" class="input-checkbox" />I accept the
+                terms and conditions of this
+                <span><a href="" class="privacy"> Privacy Policy </a></span>
+              </div>
+              <button type="submit" class="service-submit-btn">Send</button>
+            </form>
           </div>
         </div>
       </section>
@@ -373,6 +435,28 @@
             </svg>
           </a>
         </div>
+      </section>
+      <section class="subscription">
+        <form class="footer-subscribe">
+          <label for="user-email">Subscribe</label>
+          <div class="email-subscription">
+            <input
+              type="email"
+              name="email"
+              id="user-email"
+              class="input-email"
+              placeholder="E-mail"
+            />
+            <div>
+              <button type="submit" class="footer-subscribe-btn">
+                Subscribe
+                <svg class="submit-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-Frame-3"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
       </section>
     </footer>
     <script src="./js/modal.js"></script>
