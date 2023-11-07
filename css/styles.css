@@ -280,10 +280,20 @@ body {
   background-color: var(--cornflower);
   width: 30px;
   height: 30px;
-  color: var(--navy_blue);
-  margin-top: 24px;
-  margin-right: 24px;
+  color: var(--ocean);
+  margin-left: auto;
   border-color: var(--cornflower);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) border 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  fill: currentColor;
+  border: 1px solid currentColor;
 }
 
 /* end of button style */
@@ -620,6 +630,7 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   width: 264px;
   height: 40px;
+  background: none;
 }
 
 .email-subscription {
@@ -708,21 +719,28 @@ body {
   padding-left: 38px;
   border-radius: 4px;
   border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
+  transition: 250ms;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-info-icon {
   position: absolute;
   top: 13px;
   left: 12px;
+  fill: black;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.service-info:focus-within .service-info-input {
+.service-info:focus-within .service-info-input,
+.service-info:hover .service-info-input {
   border: 1px solid var(--iris);
   outline: none; /*remove the default focus outline that some browsers apply. */
   color: var(--navy_blue);
 }
 
-.service-info:focus-within .service-info-icon {
+.service-info:focus-within .service-info-icon,
+.service-info:hover .service-info-icon {
   fill: var(--iris);
 }
 
@@ -742,22 +760,57 @@ body {
   width: 382px;
   height: 120px;
   border-radius: 4px;
-  border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
+  border: 1px solid #2e2f42;
   padding-top: 8px;
   padding-left: 16px;
   resize: none;
   margin-top: 4px;
   outline: none;
+  transition: 250ms;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.service-input-comment:focus {
+.service-input-comment:focus,
+.service-input-comment:hover {
   border: 1px solid var(--iris);
   color: var(--navy_blue);
   outline: none; /*remove the default focus outline that some browsers apply. */
 }
 
+.input-checkbox {
+  /* appearance: none; */
+  position: relative;
+  left: -2px;
+  opacity: 0;
+  overflow: visible;
+  z-index: 2;
+}
+
+.service-info-icon-checkmark {
+  fill: none; /* to hide check mark */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  border: 2px solid black;
+  transition-property: border-color, background-color, fill;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.privacy-check .input-checkbox:focus + .service-info-icon-checkmark {
+  fill: white;
+  background-color: var(--iris);
+  outline: 2px solid black;
+  width: 13px;
+  height: 13px;
+  z-index: 2;
+}
+
 .privacy {
-  text-decoration: underline;
   color: var(--iris);
   font-family: Roboto;
   font-size: 12px;
@@ -779,6 +832,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .service-submit-btn {
